@@ -11,3 +11,5 @@ var multipleNumbersString = "1,3,4,5,6,5,3";
 console.log("Addition : "+ calculator.addString(multipleNumbersString));
 var stringWithNewLine = "1\n2,3,4,5,6,5,3,\n";
 console.log("Addition : "+ calculator.addString(stringWithNewLine));
+var stringWithNewLine = "-1\n2,3,4,-5,6,-5,3,\n";
+console.log("Addition : "+ calculator.addString(stringWithNewLine));
