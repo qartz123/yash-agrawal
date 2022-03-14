@@ -16,11 +16,15 @@ app.post('/form_post', urlencodedParser, function(req, res) {
         res.send("Result is : 0.");
     } else {
         var numStringArr = numString.split(',');
-        var result = 0;
-        numStringArr.forEach(value => (
-            result = result + parseInt(value)
-        ));
-        res.send("Result is : " + result);
+        if(numStringArr.length == 2){
+            var result = 0;
+            numStringArr.forEach(value => (
+                result = result + parseInt(value)
+            ));
+            res.send("Result is : " + result);
+        } else {
+            res.send("Invalid")
+        }
     }
 })
 
