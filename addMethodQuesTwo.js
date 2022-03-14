@@ -20,5 +20,22 @@ exports.addMethod3 = function(inputStr) {
         }
     })
     return result;
-
+}
+exports.addMethod5 = function(inputStr) {
+    var numberArray = inputStr.split(',');
+    var result = negativeValueCount = 0;
+    var negativeValArr = [];
+    numberArray.forEach(value => {
+        if(parseInt(value) < 0) {
+            negativeValArr[negativeValueCount] = value;
+            negativeValueCount++;
+        } else {
+            result = result + parseInt(value);
+        }
+    });
+    if(negativeValArr) {
+        return "Negatives are Not allowed. Entered negative values are -> " + negativeValArr.join(',');
+    } else {
+        return "Result is : " + result;
+    }
 }
