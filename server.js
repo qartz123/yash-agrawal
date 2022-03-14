@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var addMethodQuesTwo = require('./addMethodQuesTwo');
 
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
