@@ -39,3 +39,19 @@ exports.addMethod5 = function(inputStr) {
         return "Result is : " + result;
     }
 }
+exports.addMethod4 = function(inputStr) {
+    var subStr = inputStr.slice(0, 5);
+    var regexTest = /\/\/.{1}\\n{1}/g.test(subStr);
+    var result = 0;
+    if(regexTest) {
+        var delimeter = subStr.charAt(2);
+        var numberSubStr = inputStr.substring(5);
+        var numberArray = numberSubStr.split(delimeter);
+        numberArray.forEach(value => {
+            result = result + parseInt(value);
+        });
+        return "Result is : " + result
+    } else {
+        return "Invalid String."
+    }
+}
