@@ -16,14 +16,19 @@ app.post('/form_post', urlencodedParser, function(req, res) {
         res.send("Result is : 0.");
     } else {
         var numStringArr = numString.split(',');
-        if(numStringArr.length == 2){
-            var result = 0;
-            numStringArr.forEach(value => (
-                result = result + parseInt(value)
-            ));
-            res.send("Result is : " + result);
+        var validString = /[^\d,.]/g.test(numString);
+        if(!validString){
+            if(numStringArr.length == 2){
+                var result = 0;
+                numStringArr.forEach(value => (
+                    result = result + parseInt(value)
+                ));
+                res.send("Result is : " + result);
+            } else {
+                res.send("Invalid String. Please enter a valid string having max 2 numeric values separated by comma only.")
+            }
         } else {
-            res.send("Invalid")
+            res.send("Invalid String. Please enter a valid string having numeric values and comma only.")
         }
     }
 })
