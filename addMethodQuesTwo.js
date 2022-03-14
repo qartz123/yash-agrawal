@@ -6,3 +6,19 @@ exports.addMethod2 = function(inputString) {
     });
     return result;
 }
+exports.addMethod3 = function(inputStr) {
+    var numberArr = inputStr.split(',');
+    var result = 0;
+    numberArr.forEach(value => {
+        if(value.length != 1) {
+            var strArrSplitByNewLine = value.replace(/\n/g, ',').split(',');
+            strArrSplitByNewLine.forEach(val => {
+                result = result + parseInt(val);
+            })
+        } else {
+            result = result + parseInt(value);
+        }
+    })
+    return result;
+
+}

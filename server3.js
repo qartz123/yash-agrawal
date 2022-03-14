@@ -12,13 +12,8 @@ app.post('/form_post', urlEncoder, function(req, res){
     if(inputString == undefined || inputString == '') {
         res.send("Result is : 0.");
     } else {
-        var stringTestResult = /[^\d,]/g.test(inputString);
-        if(!stringTestResult) {
-            var result = addMethodQuesTwo.addMethod2(inputString);
-            res.send("Result is : " + result);
-        } else {
-            res.send("Invalid String. Please enter a valid string having numeric values and comma only.");
-        }
+        var result = addMethodQuesTwo.addMethod3(inputString);
+        res.send("Result is : " + result);
     }
 })
 

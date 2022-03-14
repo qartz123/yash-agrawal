@@ -16,7 +16,7 @@ app.post('/form_post', urlencodedParser, function(req, res) {
         res.send("Result is : 0.");
     } else {
         var numStringArr = numString.split(',');
-        var validString = /[^\d,.]/g.test(numString);
+        var validString = /[^\d,]/g.test(numString);
         if(!validString){
             if(numStringArr.length == 2){
                 var result = 0;
