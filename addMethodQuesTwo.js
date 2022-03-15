@@ -41,7 +41,7 @@ exports.addMethod5 = function(inputStr) {
 }
 exports.addMethod4 = function(inputStr) {
     var subStr = inputStr.slice(0, 5);
-    var regexTest = /\/\/.{1}\\n{1}/g.test(subStr);
+    var regexTest = /^\/?\/.{1}\\n{1}/g.test(subStr);
     var result = 0;
     if(regexTest) {
         var delimeter = subStr.charAt(2);
